@@ -241,7 +241,7 @@
 
     /* Media queries */
     
-    @media (max-width: 390px) {
+    @media (max-width: 420px) {
         .slide-container {
             bottom: 10%;
             width: 100%;

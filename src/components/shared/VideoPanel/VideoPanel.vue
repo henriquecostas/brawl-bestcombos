@@ -90,7 +90,7 @@
         opacity: 100%;
     }
 
-    @media (max-width: 360px) {
+    @media (max-width: 420px) {
         .watch-video {
             margin-left: 0;
         }

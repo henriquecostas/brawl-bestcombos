@@ -47,7 +47,7 @@ export default {
         height: 100%;
     }
 
-    @media (max-width: 390px) {
+    @media (max-width: 420px) {
         .character-image {
             display: none;
         }

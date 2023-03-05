@@ -75,7 +75,7 @@ export default {
         background-clip: text;
     }
 
-    @media (max-width: 390px) {
+    @media (max-width: 420px) {
         .description-container {
             align-items: baseline;
             justify-content: center;

@@ -227,7 +227,7 @@ export default {
         border-radius: 8px;
     }
     
-    @media (max-width: 360px) {
+    @media (max-width: 420px) {
         .static-bar{
             position: absolute;
             bottom: 0;
