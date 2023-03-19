@@ -81,7 +81,7 @@ export default {
             justify-content: center;
             top: 0;
             margin-top: 40px;
-        }
+        }   
 
         .description {
             font-size: 20px;

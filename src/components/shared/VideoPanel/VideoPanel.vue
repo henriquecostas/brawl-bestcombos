@@ -8,7 +8,6 @@
                     alt='Iniciar video'
                 />
             </div>
-            <!-- <div class="colorize"></div> -->
             <slot>
             </slot>
         </div>
@@ -90,12 +89,36 @@
         opacity: 100%;
     }
 
+    @media (max-width: 320px) {
+        .video-display {
+            height: 90%;
+        }
+
+        .play-btn {
+            height: 40px;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .video-display {
+            height: 90%;
+        }
+
+        .play-btn {
+            height: 60px;
+        }
+    }
+
     @media (max-width: 420px) {
+        .video-display {
+            height: 80%;
+        }
         .watch-video {
             margin-left: 0;
         }
         .play-btn {
             margin-left: 0;
+            height: 60px;
         }
     }
 

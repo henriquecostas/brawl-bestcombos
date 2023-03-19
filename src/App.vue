@@ -4,11 +4,11 @@
     <VideoPanel>
         <video
             class="video" 
-            src="/video/replay-cross.mp4"
+            src="/video/replay-2.mp4"
             autoplay 
             muted
             loop   
-            v-on:click="watchToggle"  
+            @click = watchToggle  
         >
         </video>
     </VideoPanel>
@@ -51,7 +51,6 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import CharacterImage from './components/shared/CharacterImage/CharacterImage.vue';
 import VideoPanel from './components/shared/VideoPanel/VideoPanel.vue';
 import VideoPanelTitle from './components/shared/VideoPanelTitle/VideoPanelTitle.vue';
@@ -60,7 +59,6 @@ import SlideVideo from './components/shared/SlideVideo/SlideVideo.vue';
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
     CharacterImage,
     VideoPanel,
     VideoPanelTitle,
@@ -86,23 +84,23 @@ export default {
                     description: 'Imagem do Cross',
                     video:[
                         {
-                            src: "/public/video/replay-cross.mp4",
+                            src: "/video/replay-2.mp4",
                             thumb: "/img/thumb/thumb1.png"
                         },
                         {
-                            src: "/video/replay-cross.mp4",
+                            src: "/video/replay-1.mp4",
                             thumb: "/img/thumb/thumb2.png"
                         },
                         {
-                            src: "/video/replay-cross.mp4",
+                            src: "/video/replay-3.mp4",
                             thumb: "/img/thumb/thumb3.png"
                         },
                         {
-                            src: "/video/replay-cross.mp4",
+                            src: "/video/replay-2.mp4",
                             thumb: "/img/thumb/thumb1.png"
                         },
                         {
-                            src: "/video/replay-cross.mp4",
+                            src: "/video/replay-1.mp4",
                             thumb: "/img/thumb/thumb1.png"
                         }                   
                     ],
@@ -116,9 +114,11 @@ export default {
             let container = document.querySelector('.video-display');
             let video = container.querySelector('.video-display .video');
 
+
             if (video.classList.contains('watch')) {
                 video.classList.remove('watch')
                 container.classList.remove('watch')
+
             } else {
                 video.classList.add('watch')
                 container.classList.add('watch')
@@ -126,6 +126,7 @@ export default {
             }
         }
     }
+        
 }
 </script>
 
@@ -227,7 +228,18 @@ export default {
         border-radius: 8px;
     }
     
+
+    @media (max-width: 320px) {
+        .video-display {
+            height: 80%;
+        }
+    }
+
     @media (max-width: 420px) {
+        #app {
+            border: none;
+        }
+
         .static-bar{
             position: absolute;
             bottom: 0;

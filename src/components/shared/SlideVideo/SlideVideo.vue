@@ -1,12 +1,12 @@
 <template class="container">
         <div class="slide-container">
 
-            <div class="arrow-previous control">
+            <!-- <div class="arrow-previous control">
                 <img
                     src="/svg/arrow-left.svg"
                     alt="Passar slide para esquerda"
                 />
-            </div>
+            </div> -->
 
             <div class="slide-content">
                 <ul class="slide-list">
@@ -14,15 +14,26 @@
                 </ul>
             </div>
 
-            <div class="arrow-next control">
+            <!-- <div class="arrow-next control">
                 <img 
                     src="/svg/arrow-right.svg"
                     alt="Passar slide para direita"
                 />
-            </div>
+            </div> -->
 
             <div class="select-container">
-
+                <div class="arrow-previous control">
+                    <img
+                        src="/svg/arrow-left.svg"
+                        alt="Passar slide para esquerda"
+                    />
+                </div>
+                <div class="arrow-next control">
+                    <img 
+                        src="/svg/arrow-right.svg"
+                        alt="Passar slide para direita"
+                    />
+                </div>
             </div>
 
         </div>
@@ -93,6 +104,11 @@
                     })
                 
                     items[slideItem.current].classList.add('active');
+                    let elementoLink = items[slideItem.current].querySelector('a')
+
+                    let video = document.querySelector('video')
+
+                    video.src = elementoLink.href
                     selectItems[slideItem.current].classList.add('selected');
 
 
@@ -115,7 +131,13 @@
                         slideItem.current = index;
 
                         items[slideItem.current].classList.add('active');
-                        
+
+                        let elementoLink = items[slideItem.current].querySelector('a')
+
+                        let video = document.querySelector('video')
+
+                        video.src = elementoLink.href                        
+
                         items[slideItem.current].scrollIntoView({
                             inline: "center",
                             behavior: "smooth"
@@ -140,6 +162,10 @@
  
         width: 80%;
         height: 160px;
+    }
+
+    .slide-container a {
+        pointer-events: none;
     }
 
     .slide-container::-webkit-scrollbar {
@@ -176,15 +202,15 @@
     }
 
     .arrow-previous {
-        position: absolute;
+        display: flex;
+
+        width: 24px;
+        height: 24px;
+
         background-color: #075e81;
         border-radius: 8px;
-        width: 40px;
-        height: 40px;
-        top: 32%;
-        left: 0;
-        display: flex;
-        display: none;
+
+        margin-right: 20px;
     }
     
     .arrow-previous:hover {
@@ -193,16 +219,16 @@
     }
 
     .arrow-next {
-        position: absolute;
+        display: flex;
+        order: 1;
+
+        width: 24px;
+        height: 24px;
+
         background-color: #075e81;
         border-radius: 8px;
-        width: 40px;
-        height: 40px;
-        top: 32%;
-        right: 0;
-        display: flex;
-        display: none;
 
+        margin-left: 20px;
     }
 
     .arrow-next:hover {
@@ -216,10 +242,14 @@
      
     /* select box */
     .select-container {
-        width: max-content;
-        margin: 0 auto;
         display: flex;
+        flex-wrap: wrap;
         gap: 20px;
+        
+        width: max-content;
+        
+        margin: 0 auto;
+        align-items: center;
     }
   
     .select-item {
@@ -240,7 +270,17 @@
 
 
     /* Media queries */
-    
+
+    @media (max-width: 320px) {
+        .slide-item img {
+            height: 80px;
+        }
+
+        .slide-container {
+            height: auto;
+        }
+    }
+
     @media (max-width: 420px) {
         .slide-container {
             bottom: 10%;
