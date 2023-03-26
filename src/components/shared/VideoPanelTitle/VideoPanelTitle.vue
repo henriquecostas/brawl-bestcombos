@@ -77,13 +77,12 @@ export default {
 
     @media (max-width: 420px) {
         .description-container {
-            align-items: baseline;
             justify-content: center;
             top: 0;
-            margin-top: 40px;
+            align-items: baseline;
         }   
-
         .description {
+            margin-top: 40px;
             font-size: 20px;
         }
         .description h1 { 
